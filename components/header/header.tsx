@@ -1,12 +1,16 @@
-import Link from "next/link";
+import { Navigation } from "../navigation/navigation";
+
+const navItems = [
+  { label: "Home", href: "/" },
+  { label: "Blog", href: "/blog" },
+  { label: "About", href: "/about" },
+];
 
 const Header = () => {
   return (
-    <header className=" bg-green-600">
-      <div className="mx-auto flex max-w-7x1 items-center justify-between p-6 lg:px-8">
-        <Link href="/">Home</Link>
-        <Link href="/about">About</Link>
-        <Link href="/blog">Blog</Link>
+    <header className=" bg-green-600 mt-1 shadow-md rounded-md">
+      <div className="flex items-center justify-between p-6 ">
+        <Navigation navLinks={navItems} />
       </div>
     </header>
   );
